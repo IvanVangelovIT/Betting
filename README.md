@@ -3,6 +3,7 @@
 
 2. Swagger
 <img width="954" alt="All" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/aaca126a-d6a7-4fee-9985-b609ef7c09bf">
+<img width="669" alt="Capture" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/91aaf49c-0259-4d21-ae15-fdbf55069a5f">
 <img width="502" alt="MatchId" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/6f3d30f3-25c9-4540-9174-f1b2d3314820">
 <img width="354" alt="Changes" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/503168fd-a411-4c80-b02f-3cd1dba98f72">
 
