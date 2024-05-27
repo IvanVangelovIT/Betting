@@ -9,10 +9,8 @@ public class EventEntity
     
     public int EventId { get; set; }
     
-    
     public string Name { get; set; }
 
-    
     public bool IsLive { get; set; }
     
     public int CategoryId { get; set; }

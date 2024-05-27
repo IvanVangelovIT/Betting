@@ -6,7 +6,6 @@ using Soap.Models;
 using WebApi.Handlers.Matches.GetAll;
 using WebApi.Handlers.Matches.GetById;
 using WebApi.Handlers.Matches.Notify;
-using WebApi.Handlers.Sports.GetAll2;
 namespace WebApi.Controllers;
 
 [ApiController]
@@ -33,13 +32,7 @@ public class AdxPricesController : ControllerBase
         request.SetMatchId(id);
         return this.Ok(await this.mediator.Send(request));
     }
-    
-    [HttpGet("test")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<XmlSportsModel>> GetAll2()
-        => this.Ok(await this.mediator.Send(new GetAll2SportsRequest()));
-    
+
     [HttpGet("notify")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
