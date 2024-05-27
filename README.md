@@ -11,6 +11,7 @@
    <img width="952" alt="Hangfire" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/d29f650b-7599-408c-ad97-1825aad20116">
 
 4. Redis
+   
    <img width="921" alt="RedisMatches" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/653dc3f4-8379-48b6-be07-01133adfcffa">
    <img width="688" alt="2" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/856e08b0-6e7c-4bd7-baf4-c07cbdb3b217">
 
