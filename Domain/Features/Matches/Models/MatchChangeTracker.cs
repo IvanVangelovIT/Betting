@@ -6,6 +6,8 @@ public class MatchChangeTracker
 {
     public Visibility Visibility { get; set; }
     
+    public SportType SportType { get; set; }
+    
     public ChangeType ChangeType { get; set; }
     
     public List<int> Ids { get; set; }

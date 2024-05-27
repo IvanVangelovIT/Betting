@@ -124,11 +124,11 @@ public class ProcessSportsEveryOneMinuteJob
                     .SelectMany(x => x.Odds),
                 s => s.OddId);
 
-        var matchChangeTracker = CreateMatchChangeTracker(ChangeType.Match, addedMatches, removedMatches, changedMatches);
+        var matchChangeTracker = CreateMatchChangeTracker(SportType.Match, addedMatches, removedMatches, changedMatches);
         
-        var betChangeTracker = CreateMatchChangeTracker(ChangeType.Bet, addedBets, removedBets, changedBets);
+        var betChangeTracker = CreateMatchChangeTracker(SportType.Bet, addedBets, removedBets, changedBets);
         
-        var oddsChangeTracker = CreateMatchChangeTracker(ChangeType.Odd, addedOdds, removedOdds, changedOdds);
+        var oddsChangeTracker = CreateMatchChangeTracker(SportType.Odd, addedOdds, removedOdds, changedOdds);
 
         var allTrackers = new MatchesChangeTracker();
         
@@ -141,7 +141,7 @@ public class ProcessSportsEveryOneMinuteJob
         await this.SetRedisAsync<MatchesChangeTracker>(allTrackers, db, RedisConstants.ChangeTracker);
     }
     
-    private List<MatchChangeTracker> CreateMatchChangeTracker<T>(ChangeType changeType, IEnumerable<T> addedItems, IEnumerable<T> removedItems, IEnumerable<T> changedItems) where T : IHasId
+    private List<MatchChangeTracker> CreateMatchChangeTracker<T>(SportType sportType, IEnumerable<T> addedItems, IEnumerable<T> removedItems, IEnumerable<T> changedItems) where T : IHasId
     {
         var trackers = new List<MatchChangeTracker>();
 
@@ -149,7 +149,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                ChangeType = changeType,
+                SportType = sportType,
+                ChangeType = ChangeType.Add,
                 Visibility = Visibility.Show,
                 Ids = addedItems.Select(x => x.Id).ToList()
             });
@@ -159,7 +160,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                ChangeType = changeType,
+                SportType = sportType,
+                ChangeType = ChangeType.Remove,
                 Visibility = Visibility.Hide,
                 Ids = removedItems.Select(x => x.Id).ToList()
             });
@@ -169,7 +171,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                ChangeType = changeType,
+                SportType = sportType,
+                ChangeType = ChangeType.Change,
                 Visibility = Visibility.Show,
                 Ids = changedItems.Select(x => x.Id).ToList()
             });
