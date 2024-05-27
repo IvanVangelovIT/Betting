@@ -58,10 +58,10 @@ public class ProcessSportsEveryOneMinuteJob
         var (previousMatchTrackerKey, cachedPreviousMatchTracker) =
             await this.GetPreviousCacheAsync<MatchesChangeTracker>(redisDb, RedisConstants.ChangeTracker);
         
-        // Set current change tracker cache cache 
+        // Set current change tracker cache 
         await this.SetChangeTrackerSportsAsync(parsedCurrentSports, cachedPreviousSports, redisDb);
 
-        // Delete previous change tracker Cache
+        // Delete previous change tracker cache
         await DeletePreviousCacheAsync(previousMatchTrackerKey, redisDb);
     }
 
