@@ -149,9 +149,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                SportType = sportType,
-                ChangeType = ChangeType.Add,
-                Visibility = Visibility.Show,
+                SportType = sportType.ToString(),
+                ModificationType = ModificationType.Add.ToString(),
                 Ids = addedItems.Select(x => x.Id).ToList()
             });
         }
@@ -160,9 +159,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                SportType = sportType,
-                ChangeType = ChangeType.Remove,
-                Visibility = Visibility.Hide,
+                SportType = sportType.ToString(),
+                ModificationType = ModificationType.Remove.ToString(),
                 Ids = removedItems.Select(x => x.Id).ToList()
             });
         }
@@ -171,9 +169,8 @@ public class ProcessSportsEveryOneMinuteJob
         {
             trackers.Add(new MatchChangeTracker
             {
-                SportType = sportType,
-                ChangeType = ChangeType.Change,
-                Visibility = Visibility.Show,
+                SportType = sportType.ToString(),
+                ModificationType = ModificationType.Change.ToString(),
                 Ids = changedItems.Select(x => x.Id).ToList()
             });
         }

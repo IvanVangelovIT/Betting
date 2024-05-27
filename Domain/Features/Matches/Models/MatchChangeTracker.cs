@@ -4,11 +4,9 @@ namespace Domain.Features.Matches.MatchesChangeTracker;
 
 public class MatchChangeTracker
 {
-    public Visibility Visibility { get; set; }
+    public string SportType { get; set; }
     
-    public SportType SportType { get; set; }
-    
-    public ChangeType ChangeType { get; set; }
+    public string ModificationType { get; set; }
     
     public List<int> Ids { get; set; }
 }

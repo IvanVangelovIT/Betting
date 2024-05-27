@@ -1,6 +1,6 @@
 namespace Domain.Features.Matches.Models;
 
-public enum ChangeType
+public enum ModificationType
 {
     Add,
     Remove,
