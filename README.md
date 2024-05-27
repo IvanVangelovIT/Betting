@@ -1,5 +1,4 @@
 1. Betting database
-<img width="708" alt="latestNotify" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/f145af7a-03bd-4179-b569-cf57dc9ef9b1">1. Betting database
    <img width="879" alt="db" src="https://github.com/IvanVangelovIT/Betting/assets/80156125/19110008-ffde-433a-bb06-e02ff60b43da">
 
 2. Swagger
