@@ -9,4 +9,7 @@ public static class ConfigurationExtensions
     
     public static string GetRedisDbConnectionString(this IConfiguration configuration)
         => configuration.GetConnectionString("Redis");
+    
+    public static string GetHangfireConnectionString(this IConfiguration configuration)
+        => configuration.GetConnectionString("Hangfire");
 }

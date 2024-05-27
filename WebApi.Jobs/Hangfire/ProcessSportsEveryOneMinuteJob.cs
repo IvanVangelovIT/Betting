@@ -1,10 +1,8 @@
-using System.Diagnostics;
 using Domain.Constants;
 using Domain.DbContexts;
 using Domain.Features.Matches.MatchesChangeTracker;
 using Domain.Features.Matches.Models;
 using Domain.Features.Sports.Services;
-using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Soap.Http;
 using Soap.Models;

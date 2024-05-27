@@ -1,4 +1,5 @@
 using Domain;
+using Domain.Extensions;
 using Hangfire;
 using Hangfire.MySql;
 using WebApi.Jobs.Hangfire;
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ApplySharedConfig(builder.Configuration);
 
-string hangfireConnectionString = "Server=127.0.0.1;Port=3308;Database=Hangfire;Uid=root;Allow User Variables=true";
+var connectionString = builder.Configuration.GetHangfireConnectionString();
 
 builder.Services.AddHangfire(configuration => configuration
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
@@ -15,7 +16,7 @@ builder.Services.AddHangfire(configuration => configuration
     .UseRecommendedSerializerSettings()
     .UseStorage(
         new MySqlStorage(
-            hangfireConnectionString,
+            connectionString,
             new MySqlStorageOptions
             {
                 QueuePollInterval = TimeSpan.FromSeconds(10),
